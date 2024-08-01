@@ -4,17 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="output.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
     <title>Password Generator</title>
 </head>
 <body>
-    <div class="Container w-[100vw] h-[100vh] bg-red-100">   <!-- class->Container -->
+    <div class="Container">   <!-- class->Container -->
         <h1>Password Generator</h1>
 
         <div class="display-container">    <!-- class->display-container -->
-            <input readonly placeholder="Password"  data-passwordDisplay>   <!-- Custom Attribute->data-passwordDisplay -->
+            <input readonly placeholder="Password" class="display"  data-passwordDisplay>   <!-- Custom Attribute->data-passwordDisplay -->
 
             <button data-copy>   <!-- Custom Attribute->data-copy -->
-                <span data-copyMsg ></span>    <!-- Custom Attribute->data-copyMsg -->
+                <span data-copyMsg  class="tooltip"></span>    <!-- Custom Attribute->data-copyMsg -->
                 <img src="./assets/copy.svg" alt="COPY" width="24" height="24">
             </button>
         </div>
@@ -29,19 +33,19 @@
             <input type="range" min="1" max="20" step="1" class="input-slider" data-lengthSlider>   <!-- Custom Attribute->data-lengthSlider -->
 
             <!-- Check Boxes -->
-            <div>
+            <div class="check">
                 <input type="checkbox" id="uppercase">   <!-- id->uppercase -->
                 <label for="uppercase">Include Uppercase Letters</label>
             </div>
-            <div>
+            <div class="check">
                 <input type="checkbox" id="lowercase">   <!-- id->lowercase -->
                 <label for="lowercase">Include Lowercase Letters</label>
             </div>
-            <div>
+            <div class="check">
                 <input type="checkbox" id="numbers">    <!-- id->numbers -->
                 <label for="numbers">Include Number Letters</label>
             </div>
-            <div>
+            <div class="check">
                 <input type="checkbox" id="symbol">    <!-- id->symbol -->
                 <label for="symbol">Include Symbol Letters</label>
             </div>
@@ -50,7 +54,7 @@
             <!-- Strength Section -->
              <div class="strength-container">    <!-- class->strength-container -->
                 <p>Strength</p>
-                <div data-Indicator class=""></div>    <!-- Custom Attribute->data-Indicator -->
+                <div data-Indicator class="indicator"></div>    <!-- Custom Attribute->data-Indicator -->
              </div>
 
              <!-- Generate Password -->

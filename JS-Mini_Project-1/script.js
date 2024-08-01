@@ -19,14 +19,18 @@ const symbolString = "!#$%&'()*+,-./:;<=>?@[]^_`{|}"
 
 handleSlider();
 
-//set strength colour to biege
 
+//set strength colour to biege
+setIndicator("#ccc")
 //copy content
 
 //handel slider
 function handleSlider(){
     inputSlider.value = passwordLength;
     lengthDisplay.innerText = passwordLength; 
+    const min = inputSlider.min;
+    const max = inputSlider.max;
+    inputSlider.style.backgroundSize = ((passwordLength-min)*100/(max-min))+"% 100%"
 }
 
 //generate pass
@@ -34,6 +38,7 @@ function handleSlider(){
 //set indicator
 function setIndicator(color){
     indicator.style.backgroundColor = color;
+    indicator.style.boxShadow = `0px 0px 12px 1px ${color}`
     // indicator.setAttribute("style","shadow")
 }
 
@@ -104,7 +109,7 @@ async function copyContent() {
 
   setTimeout(()=>{
     copyMsg.classList.remove("active")
-  },2000)
+  },500)
 }
 
 
